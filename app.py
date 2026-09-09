@@ -3,10 +3,8 @@ import requests
 import os
 
 # --- Configuration ---
-# Backend API URL. Should be configurable or set via environment variable.
-# For local development, it might be http://localhost:8000
-# In production, it would be the deployed FastAPI URL.
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+# Backend API URL. Use port 8001 to avoid conflicts with other services.
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8001")
 SERPAPI_KEY = os.getenv("SERPAPI_KEY") # User needs to set this environment variable
 
 # --- Helper Functions ---
@@ -74,7 +72,7 @@ def main():
                 if rag_response['citations']:
                     st.subheader("Citations")
                     for citation in rag_response['citations']:
-                        st.markdown(f"- **{citation['disease']}** - {citation['section']} (Content: {citation['content'][:100]}...)")
+                        st.markdown(f"- **{citation['disease']}** — {citation['section']}\n  {citation['citation']}")
             else:
                 st.error("Could not retrieve an answer from the RAG system.")
 

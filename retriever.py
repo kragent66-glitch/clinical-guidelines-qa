@@ -2,6 +2,7 @@ import os
 import requests
 from typing import List, Dict
 import numpy as np
+import re
 
 # Simple cosine similarity TF-IDF or Embedding-based retriever.
 # To keep the app portable and ultra-reliable on the VPS (and match Kimi-K3/Nvidia capabilities),

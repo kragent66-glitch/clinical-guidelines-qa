@@ -26,9 +26,12 @@ Clinical guidelines provide a framework, but treatment decisions must always be 
    ```bash
    streamlit run app.py
    ```
-4. Set environment variables (optional):
-   - `BACKEND_URL`: URL of the FastAPI backend (default: http://localhost:8000)
+4. Set environment variables:
+   - `BACKEND_URL`: URL of the FastAPI backend (default: http://localhost:8001)
    - `SERPAPI_KEY`: API key for web search functionality
+   - `LLM_MODEL`: OpenRouter model ID (default: `nvidia/nemotron-3-ultra-550b-a55b:free`)
+   - `LLM_BASE_URL`: LLM API base URL (default: `https://openrouter.ai/api/v1`)
+   - `LLM_API_KEY` or `OPENROUTER_API_KEY`: your OpenRouter API key. If unset, the backend also looks for a key at `~/.hermes/orkey.txt`.
 
 ## Project Structure
 - `data/guidelines/`: Markdown files for clinical guidelines.
