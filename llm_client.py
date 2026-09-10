@@ -69,7 +69,7 @@ Provide a clinically accurate, evidence-based answer.
                 f"{self.base_url}/chat/completions",
                 headers=headers,
                 json=payload,
-                timeout=30
+                timeout=180
             )
 
             response.raise_for_status()
